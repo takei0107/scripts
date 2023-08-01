@@ -18,3 +18,8 @@ make deps
 make CMAKE_BUILD_TYPE=RelWithDebInfo
 make install
 
+# print info
+echo ""
+type nvim
+echo ""
+nvim --version
