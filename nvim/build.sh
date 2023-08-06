@@ -9,7 +9,7 @@ echo "tmp directory: $tmp_dir"
 mkdir -p "$tmp_dir"
 
 # git clone
-git clone --branch master --single-branc --depth 1 https://github.com/neovim/neovim.git "$tmp_dir"
+git clone --branch master --single-branch --depth 1 https://github.com/neovim/neovim.git "$tmp_dir"
 cd "$tmp_dir"
 
 # build
