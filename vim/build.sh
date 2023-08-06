@@ -13,6 +13,13 @@ if type ghq > /dev/null 2>&1; then
   echo ""
   echo "use ghq repositories directory"
   dir=$(ghq list -p "github.com/vim/vim")
+
+  # ghqリポジトリにない時はghq getする
+  if [[ -z $dir ]]; then
+    echo "missing vim repository at ghq. cloning"
+    ghq get "https://github.com/vim/vim.git"
+    dir=$(ghq list -p "github.com/vim/vim")
+  fi
   fetch_cmd="git pull origin master"
 else
   echo ""
@@ -30,12 +37,19 @@ if [[ -z $dir || -z $fetch_cmd ]]; then
 fi
 
 cd "$dir"
+pwd
 $fetch_cmd
 
 # build & install
 cd ./src
-make distclean
-./configure --with-features=huge --enable-python3interp=yes --enable-luainterp=yes --enable-fail-if-missing --with-luajit
+if ! ./configure --with-features=huge --enable-python3interp=yes --enable-luainterp=yes --enable-fail-if-missing --with-luajit; then
+  echo ""
+  echo "configure failed!!"
+  echo "run distclean"
+  echo ""
+  make distclean
+  exit 1
+fi
 make
 sudo make install
 
