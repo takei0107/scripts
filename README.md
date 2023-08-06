@@ -1,5 +1,12 @@
 # scripts
 
+## build vim
+```sh
+cd vim
+chmod +x ./build.sh
+sudo ./build.sh
+```
+
 ## build neovim
 ```sh
 cd nvim
