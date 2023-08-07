@@ -16,7 +16,7 @@ cd "$tmp_dir"
 make distclean
 make deps
 make CMAKE_BUILD_TYPE=RelWithDebInfo
-make install
+sudo make install
 
 # print info
 echo ""
