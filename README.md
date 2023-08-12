@@ -4,14 +4,14 @@
 ```sh
 cd vim
 chmod +x ./build.sh
-sudo ./build.sh
+./build.sh
 ```
 
 ## build neovim
 ```sh
 cd nvim
 chmod +x ./build.sh
-sudo ./build.sh
+./build.sh
 ```
 
 ## install lsp-servers
