@@ -1,5 +1,12 @@
 # scripts
 
+## install wezterm
+```sh
+cd wezterm
+chmod +x ./install-ubuntu.sh
+./install-ubuntu.sh
+```
+
 ## build vim
 ```sh
 cd vim
