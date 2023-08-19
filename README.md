@@ -1,6 +1,8 @@
 # scripts
 
 ## install wezterm
+
+### ubuntu
 ```sh
 cd wezterm
 chmod +x ./install-ubuntu.sh
