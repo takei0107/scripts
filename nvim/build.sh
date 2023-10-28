@@ -46,6 +46,15 @@ make deps
 make CMAKE_BUILD_TYPE=RelWithDebInfo
 sudo make install
 
+# remove auto installed parsers
+echo ""
+parser_dir=/usr/local/lib/nvim/parser
+echo "remove treesitter parsers: ${parser_dir}/*.so"
+if [[ -d $parser_dir ]]; then
+  sudo rm -f "$parser_dir"/*.so
+fi
+echo "removed."
+
 # version
 echo ""
 echo "install success!!"
