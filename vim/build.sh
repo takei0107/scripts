@@ -42,7 +42,14 @@ $fetch_cmd
 
 # build & install
 cd ./src
-if ! ./configure --with-features=huge --enable-python3interp=yes --enable-luainterp=yes --enable-fail-if-missing --with-luajit; then
+if ! ./configure \
+	--with-features=huge \
+	--enable-python3interp=yes \
+	--enable-luainterp=yes \
+	--enable-fail-if-missing \
+	--with-luajit \
+	--with-x \
+	; then
   echo ""
   echo "configure failed!!"
   echo "run distclean"
